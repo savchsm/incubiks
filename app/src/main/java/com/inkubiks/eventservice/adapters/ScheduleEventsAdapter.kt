@@ -4,8 +4,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.inkubiks.eventservice.BindingViewHolder
-import com.inkubiks.eventservice.databinding.ItemSheduleEventBinding
-import com.inkubiks.eventservice.getRandomDrawableId
+import com.inkubiks.eventservice.databinding.ItemScheduleEventBinding
 import com.inkubiks.eventservice.models.ScheduleEventModel
 import com.inkubiks.eventservice.toBinding
 
@@ -24,8 +23,8 @@ class ScheduleEventsAdapter(
 
     override fun getItemCount(): Int = eventsList.size
 
-    inner class EventViewHolder(binding: ItemSheduleEventBinding) :
-        BindingViewHolder<ItemSheduleEventBinding>(binding) {
+    inner class EventViewHolder(binding: ItemScheduleEventBinding) :
+        BindingViewHolder<ItemScheduleEventBinding>(binding) {
 
         init {
             binding.root.setOnClickListener { listener.onEventClicked() }
