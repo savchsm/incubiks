@@ -41,7 +41,8 @@ class ScheduleEventsAdapter(
     }
 
     fun updateData(list: List<ScheduleEventModel>) {
-        eventsList.removeAll(list)
+        eventsList.clear()
+        eventsList.addAll(list)
         notifyDataSetChanged()
     }
 
