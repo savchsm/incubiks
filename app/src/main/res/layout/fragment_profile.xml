@@ -13,6 +13,16 @@
         android:background="@color/gray">
 
         <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <ImageView
             android:id="@+id/ivSettings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -49,7 +59,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:textSize="18sp"
+            android:textSize="20sp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:text="Иванов Василий Петрович"
             app:layout_constraintTop_toBottomOf="@id/avatar"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +74,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginBottom="16dp"
-            android:textSize="12sp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="14sp"
             app:layout_constraintTop_toBottomOf="@id/tvNameUser"
             app:layout_constraintStart_toStartOf="@id/tvNameUser"
             app:layout_constraintBottom_toBottomOf="parent"/>
@@ -74,7 +86,8 @@
             android:layout_height="wrap_content"
             android:text="KJANF"
             android:layout_marginTop="8dp"
-            android:textSize="12sp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="14sp"
             app:layout_constraintTop_toBottomOf="@id/tvNameUser"
             app:layout_constraintEnd_toEndOf="@id/tvNameUser"/>
 
@@ -100,7 +113,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:text="Отдел разработки"
-            android:textSize="13sp"
+            android:textSize="15sp"
             app:layout_constraintTop_toTopOf="@id/ivDepartment"
             app:layout_constraintStart_toEndOf="@id/ivDepartment"
             app:layout_constraintBottom_toBottomOf="@id/ivDepartment"/>
@@ -121,7 +134,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:text="Android developer"
-            android:textSize="13sp"
+            android:textSize="15sp"
             app:layout_constraintTop_toTopOf="@id/ivPosition"
             app:layout_constraintStart_toEndOf="@id/ivPosition"
             app:layout_constraintBottom_toBottomOf="@id/ivPosition"/>
@@ -142,7 +155,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:text="2 года"
-            android:textSize="13sp"
+            android:textSize="15sp"
             app:layout_constraintTop_toTopOf="@id/ivExperience"
             app:layout_constraintStart_toEndOf="@id/ivExperience"
             app:layout_constraintBottom_toBottomOf="@id/ivExperience"/>
@@ -160,6 +173,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="Команда"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:textSize="16sp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
@@ -184,6 +198,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:text="Друзья"
             android:textSize="16sp"
             app:layout_constraintTop_toBottomOf="@id/rvTeam"
@@ -216,6 +231,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="Мероприятия"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:textSize="16sp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
@@ -224,6 +240,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:orientation="horizontal"
             tools:itemCount="3"

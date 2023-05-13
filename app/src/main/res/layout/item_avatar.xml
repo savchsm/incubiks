@@ -23,7 +23,7 @@
         android:elevation="0dp"
         android:paddingHorizontal="4dp"
         android:paddingBottom="4dp"
-        android:paddingTop="8dp"
+        android:paddingTop="10dp"
         android:src="@drawable/ic_avatar_medium"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
