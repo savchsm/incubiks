@@ -1,16 +1,15 @@
 package com.inkubiks.eventservice.presentation
 
-import android.graphics.drawable.GradientDrawable.Orientation
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.material.carousel.CarouselLayoutManager
 import com.inkubiks.eventservice.adapters.ScheduleEventsAdapter
 import com.inkubiks.eventservice.databinding.FragmentHomeBinding
 import com.inkubiks.eventservice.defaultScheduleEvents
+import com.inkubiks.eventservice.getRandomDrawableId
 import com.inkubiks.eventservice.viewmodel.HomeViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -24,7 +23,7 @@ class HomeFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         scheduleEventsAdapter = ScheduleEventsAdapter(
-            listener = object : ScheduleEventsAdapter.Listener{
+            listener = object : ScheduleEventsAdapter.Listener {
                 override fun onEventClicked() {}
             }
         )
@@ -44,7 +43,11 @@ class HomeFragment : Fragment() {
         setupUI()
         setupObservers()
 
-        scheduleEventsAdapter?.updateData(defaultScheduleEvents)
+        scheduleEventsAdapter?.updateData(
+            defaultScheduleEvents.map {
+                it.copy(image = getRandomDrawableId())
+            }
+        )
     }
 
     private fun setupUI() = binding?.apply {

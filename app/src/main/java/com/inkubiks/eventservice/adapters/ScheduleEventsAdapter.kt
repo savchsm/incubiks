@@ -33,10 +33,7 @@ class ScheduleEventsAdapter(
 
         fun bind(event: ScheduleEventModel) = binding.apply {
             tvEventTitle.text = event.title
-            Glide.with(context)
-                .asDrawable()
-                .load(getRandomDrawableId())
-                .into(ivEventImage)
+            Glide.with(context).load(event.image).into(ivEventImage)
         }
     }
 

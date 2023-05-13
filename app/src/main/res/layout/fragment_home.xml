@@ -32,6 +32,7 @@
         android:id="@+id/rv_schedule_events"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:clipChildren="false"
         android:clipToPadding="false"
         android:orientation="horizontal"
