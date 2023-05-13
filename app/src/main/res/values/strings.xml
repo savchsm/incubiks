@@ -2,8 +2,8 @@
     <string name="app_name">EventService</string>
     <string name="home_page">Главная</string>
     <string name="staff_page">Сотрудники</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="chat_page">Чат</string>
     <string name="profile_page">Профиль</string>
+    <string name="on_holiday">В отпуске</string>
 </resources>
