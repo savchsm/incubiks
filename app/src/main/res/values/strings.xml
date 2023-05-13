@@ -8,4 +8,5 @@
     <string name="goto_notifications_screen">Goto notifications screen</string>
     <string name="notifications">Notifications</string>
     <string name="def_app_bar_title">Пятница, 2 мая</string>
+    <string name="today">Сегодня</string>
 </resources>
