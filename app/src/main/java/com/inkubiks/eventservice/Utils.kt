@@ -15,40 +15,24 @@ fun getRandomDrawableId(): Int = listOf(
     R.drawable.def_picture_4
 ).random()
 
-val defaultScheduleEvents = listOf<ScheduleEventModel>(
-    ScheduleEventModel(
-        id = UUID.randomUUID().toString(),
-        title = "MeetUp Android Team"
-    ),
-    ScheduleEventModel(
-        id = UUID.randomUUID().toString(),
-        title = "Samokat.Tech"
-    ),
-    ScheduleEventModel(
-        id = UUID.randomUUID().toString(),
-        title = "Basketball"
-    ),
-    ScheduleEventModel(
-        id = UUID.randomUUID().toString(),
-        title = "CI/CD"
-    ), ScheduleEventModel(
-        id = UUID.randomUUID().toString(),
-        title = "Head Conference"
-    ),
-    ScheduleEventModel(
-        id = UUID.randomUUID().toString(),
-        title = "Football"
-    )
-)
+fun getRandomEventTitle(): String = listOf(
+    "MeetUp Android Team", "Samokat.Tech", "Basketball", "CI/CD", "Head Conference", "Football"
+).random()
 
-//defaultScheduleEvents.map { event ->
-//    event.copy(
-//        image = ContextCompat.getDrawable(
-//            activity?.applicationContext ?: requireContext(),
-//            getRandomDrawableId()
-//        )
-//    )
-//},
+fun getDefaultEventsData(): List<ScheduleEventModel> {
+    val list: MutableList<ScheduleEventModel> = mutableListOf()
+    repeat(10) {
+        list.add(
+            ScheduleEventModel(
+                id = UUID.randomUUID().toString(),
+                title = getRandomEventTitle(),
+                description = getRandomEventTitle(),
+                image = getRandomDrawableId()
+            )
+        )
+    }
+    return list
+}
 
 inline fun <reified V : ViewBinding> ViewGroup.toBinding(): V {
     return V::class.java.getMethod(

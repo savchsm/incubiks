@@ -4,13 +4,14 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.inkubiks.eventservice.BindingViewHolder
+import com.inkubiks.eventservice.databinding.ItemRecommendedEventBinding
 import com.inkubiks.eventservice.databinding.ItemScheduleEventBinding
 import com.inkubiks.eventservice.models.ScheduleEventModel
 import com.inkubiks.eventservice.toBinding
 
-class ScheduleEventsAdapter(
+class RecommendedEventsAdapter(
     private val listener: Listener
-) : RecyclerView.Adapter<ScheduleEventsAdapter.EventViewHolder>() {
+) : RecyclerView.Adapter<RecommendedEventsAdapter.EventViewHolder>() {
 
     private val eventsList: MutableList<ScheduleEventModel> = mutableListOf()
 
@@ -23,8 +24,8 @@ class ScheduleEventsAdapter(
 
     override fun getItemCount(): Int = eventsList.size
 
-    inner class EventViewHolder(binding: ItemScheduleEventBinding) :
-        BindingViewHolder<ItemScheduleEventBinding>(binding) {
+    inner class EventViewHolder(binding: ItemRecommendedEventBinding) :
+        BindingViewHolder<ItemRecommendedEventBinding>(binding) {
 
         init {
             binding.root.setOnClickListener { listener.onEventClicked() }
@@ -32,6 +33,7 @@ class ScheduleEventsAdapter(
 
         fun bind(event: ScheduleEventModel) = binding.apply {
             tvEventTitle.text = event.title
+            tvEventDescription.text = event.description
             Glide.with(context).load(event.image).into(ivEventImage)
         }
     }
