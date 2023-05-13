@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.inkubiks.eventservice.R
 import com.inkubiks.eventservice.databinding.FragmentEventBinding
 import com.inkubiks.eventservice.databinding.FragmentHomeBinding
@@ -29,9 +30,11 @@ class EventFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        setupUI()
     }
 
-    private fun setupUI() {}
+    private fun setupUI() {
+        binding?.topAppBar?.setNavigationOnClickListener { findNavController().navigateUp() }
+    }
     private fun setupObservers() {}
 }

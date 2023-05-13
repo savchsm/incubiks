@@ -69,8 +69,6 @@ class HomeFragment : Fragment() {
             layoutManager = llManagerRecommendedEvents
             adapter = recommendedEventsAdapter
         }
-
-        topAppBar.setNavigationOnClickListener { findNavController().navigateUp() }
     }
 
     private fun setupObservers() {}
