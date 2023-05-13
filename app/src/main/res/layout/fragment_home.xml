@@ -19,7 +19,7 @@
             app:layout_scrollFlags="scroll|enterAlways|snap"
             app:menu="@menu/top_app_bar"
             app:title="@string/def_app_bar_title"
-            app:titleTextAppearance="@style/TextAppearance.Material3.ActionBar.Title" />
+            app:titleTextAppearance="@style/TextAppearance.Material3.TitleMedium" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
