@@ -8,8 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.inkubiks.eventservice.adapters.ScheduleEventsAdapter
 import com.inkubiks.eventservice.databinding.FragmentHomeBinding
-import com.inkubiks.eventservice.defaultScheduleEvents
-import com.inkubiks.eventservice.getRandomDrawableId
+import com.inkubiks.eventservice.getDefaultEventsData
 import com.inkubiks.eventservice.viewmodel.HomeViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -43,11 +42,7 @@ class HomeFragment : Fragment() {
         setupUI()
         setupObservers()
 
-        scheduleEventsAdapter?.updateData(
-            defaultScheduleEvents.map {
-                it.copy(image = getRandomDrawableId())
-            }
-        )
+        scheduleEventsAdapter?.updateData(getDefaultEventsData())
     }
 
     private fun setupUI() = binding?.apply {
