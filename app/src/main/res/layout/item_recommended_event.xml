@@ -14,6 +14,7 @@
 
 
         <ImageView
+            android:id="@+id/iv_event_image"
             android:layout_width="match_parent"
             android:layout_height="164dp"
             android:scaleType="centerCrop"
@@ -26,12 +27,14 @@
             android:padding="16dp">
 
             <TextView
+                android:id="@+id/tv_event_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/meetup_android_team"
                 android:textAppearance="?attr/textAppearanceTitleMedium" />
 
             <TextView
+                android:id="@+id/tv_event_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"

@@ -26,6 +26,7 @@ fun getDefaultEventsData(): List<ScheduleEventModel> {
             ScheduleEventModel(
                 id = UUID.randomUUID().toString(),
                 title = getRandomEventTitle(),
+                description = getRandomEventTitle(),
                 image = getRandomDrawableId()
             )
         )

@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.inkubiks.eventservice.adapters.RecommendedEventsAdapter
 import com.inkubiks.eventservice.adapters.ScheduleEventsAdapter
 import com.inkubiks.eventservice.databinding.FragmentHomeBinding
 import com.inkubiks.eventservice.getDefaultEventsData
@@ -18,11 +19,17 @@ class HomeFragment : Fragment() {
     private val viewModel: HomeViewModel by viewModel()
     private var binding: FragmentHomeBinding? = null
     private var scheduleEventsAdapter: ScheduleEventsAdapter? = null
+    private var recommendedEventsAdapter: RecommendedEventsAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         scheduleEventsAdapter = ScheduleEventsAdapter(
             listener = object : ScheduleEventsAdapter.Listener {
+                override fun onEventClicked() {}
+            }
+        )
+        recommendedEventsAdapter = RecommendedEventsAdapter(
+            listener = object : RecommendedEventsAdapter.Listener {
                 override fun onEventClicked() {}
             }
         )
@@ -43,14 +50,22 @@ class HomeFragment : Fragment() {
         setupObservers()
 
         scheduleEventsAdapter?.updateData(getDefaultEventsData())
+        recommendedEventsAdapter?.updateData(getDefaultEventsData())
     }
 
     private fun setupUI() = binding?.apply {
-        val linearLayoutManager = LinearLayoutManager(context)
-        linearLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
+        val llManagerScheduledEvents = LinearLayoutManager(context)
+        llManagerScheduledEvents.orientation = LinearLayoutManager.HORIZONTAL
         rvScheduleEvents.apply {
-            layoutManager = linearLayoutManager
+            layoutManager = llManagerScheduledEvents
             adapter = scheduleEventsAdapter
+        }
+
+        val llManagerRecommendedEvents = LinearLayoutManager(context)
+        llManagerRecommendedEvents.orientation = LinearLayoutManager.VERTICAL
+        rvRecommendedEvents.apply {
+            layoutManager = llManagerRecommendedEvents
+            adapter = recommendedEventsAdapter
         }
     }
 
