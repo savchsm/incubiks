@@ -8,12 +8,15 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:liftOnScroll="true">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/top_app_bar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            app:layout_scrollEffect="compress"
+            app:layout_scrollFlags="scroll|enterAlways|snap"
             app:menu="@menu/top_app_bar"
             app:title="@string/def_app_bar_title"
             app:titleTextAppearance="@style/TextAppearance.Material3.ActionBar.Title" />
@@ -52,8 +55,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
-                    tools:text="Новости и события" />
+                    android:text="@string/news"
+                    android:textAppearance="@style/TextAppearance.Material3.TitleLarge" />
 
             </LinearLayout>
 
