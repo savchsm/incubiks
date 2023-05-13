@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">EventService</string>
+    <string name="on_holiday">В отпуске</string>
 </resources>
