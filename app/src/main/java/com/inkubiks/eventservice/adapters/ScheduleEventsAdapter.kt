@@ -1,9 +1,11 @@
 package com.inkubiks.eventservice.adapters
 
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.inkubiks.eventservice.BindingViewHolder
+import com.inkubiks.eventservice.R
 import com.inkubiks.eventservice.databinding.ItemScheduleEventBinding
 import com.inkubiks.eventservice.models.ScheduleEventModel
 import com.inkubiks.eventservice.toBinding
@@ -32,6 +34,14 @@ class ScheduleEventsAdapter(
 
         fun bind(event: ScheduleEventModel) = binding.apply {
             tvEventTitle.text = event.title
+
+            if (event.isImportant) {
+                eventCard.apply {
+                    strokeWidth = 5
+                    strokeColor = ContextCompat.getColor(context, R.color.colorPrimary)
+                }
+            }
+
             Glide.with(context).load(event.image).into(ivEventImage)
         }
     }
