@@ -20,14 +20,6 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <!--    <TextView-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        app:layout_anchor="@id/top_app_bar"-->
-    <!--        app:layout_anchorGravity="bottom"-->
-    <!--        android:text="@string/today"-->
-    <!--        android:textAppearance="@style/TextAppearance.Material3.TitleLarge" />-->
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_schedule_events"
         android:layout_width="match_parent"
