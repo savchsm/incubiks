@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 import com.inkubiks.eventservice.models.ScheduleEventModel
+import java.util.Random
 import java.util.UUID
 
 fun getRandomDrawableId(): Int = listOf(
@@ -27,7 +28,8 @@ fun getDefaultEventsData(): List<ScheduleEventModel> {
                 id = UUID.randomUUID().toString(),
                 title = getRandomEventTitle(),
                 description = getRandomEventTitle(),
-                image = getRandomDrawableId()
+                image = getRandomDrawableId(),
+                isImportant = Random().nextBoolean()
             )
         )
     }
