@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.inkubiks.eventservice.R
 import com.inkubiks.eventservice.adapters.RecommendedEventsAdapter
 import com.inkubiks.eventservice.adapters.ScheduleEventsAdapter
 import com.inkubiks.eventservice.databinding.FragmentHomeBinding
@@ -25,12 +27,12 @@ class HomeFragment : Fragment() {
         super.onCreate(savedInstanceState)
         scheduleEventsAdapter = ScheduleEventsAdapter(
             listener = object : ScheduleEventsAdapter.Listener {
-                override fun onEventClicked() {}
+                override fun onEventClicked() = findNavController().navigate(R.id.eventFragment)
             }
         )
         recommendedEventsAdapter = RecommendedEventsAdapter(
             listener = object : RecommendedEventsAdapter.Listener {
-                override fun onEventClicked() {}
+                override fun onEventClicked() = findNavController().navigate(R.id.eventFragment)
             }
         )
     }
@@ -67,6 +69,8 @@ class HomeFragment : Fragment() {
             layoutManager = llManagerRecommendedEvents
             adapter = recommendedEventsAdapter
         }
+
+        topAppBar.setNavigationOnClickListener { findNavController().navigateUp() }
     }
 
     private fun setupObservers() {}
