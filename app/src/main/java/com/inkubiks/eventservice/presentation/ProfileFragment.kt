@@ -14,6 +14,7 @@ import com.inkubiks.eventservice.adapters.ListAvatarUser
 import com.inkubiks.eventservice.adapters.ScheduleEventsAdapter
 import com.inkubiks.eventservice.databinding.FragmentProfileBinding
 import com.inkubiks.eventservice.models.profile.Profile
+import com.inkubiks.eventservice.models.profile.Status
 import com.inkubiks.eventservice.presentation.GuestProfileFragment.Companion.DATA_GUEST_PROFILE_ARG
 import com.inkubiks.eventservice.viewmodel.ProfileViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -68,6 +69,9 @@ class ProfileFragment : Fragment() {
             if (viewModel.value.isGuest) {
                 headProfile.ivBack.visibility = View.VISIBLE
             }
+            if (viewModel.value.status == Status.ON_HOLIDAY.value) {
+                headProfile.ivHoliday.visibility = View.VISIBLE
+            }
             Glide.with(this@ProfileFragment)
                 .load(viewModel.value.avatar)
                 .override(250, 250)
@@ -76,6 +80,9 @@ class ProfileFragment : Fragment() {
             headProfile.tvNameUser.text = viewModel.value.name
             headProfile.tvStatus.text = viewModel.value.status
             headProfile.tvCity.text = viewModel.value.city
+            tvDepartment.text = viewModel.value.department
+            tvPosition.text = viewModel.value.position
+            tvExperience.text = viewModel.value.experience
         }
         teamAdapter?.setData(viewModel.value.team)
         friendsAdapter?.setData(viewModel.value.friends)
