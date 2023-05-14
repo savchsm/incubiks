@@ -56,6 +56,9 @@ class EventFragment : Fragment() {
             }
             btnDeclineEvent.setOnClickListener {
                 Snackbar.make(it, "Мероприятие отклонено", Snackbar.LENGTH_LONG).show()
+                btnAcceptEvent.visibility = View.INVISIBLE
+                btnDeclineEvent.visibility = View.INVISIBLE
+                findNavController().navigateUp()
             }
         }
     }
