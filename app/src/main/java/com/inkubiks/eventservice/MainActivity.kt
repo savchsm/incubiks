@@ -1,16 +1,16 @@
 package com.inkubiks.eventservice
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.NavigationUI.setupWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.navigation.NavigationBarView
 import com.inkubiks.eventservice.databinding.ActivityMainBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
 
     private var binding: ActivityMainBinding? = null
+    private val viewModel: MainViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,5 +28,22 @@ class MainActivity : AppCompatActivity() {
                 number = 99
             }
         }
+
+        setupObservers()
+        setupUI()
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.eventFragment -> viewModel.hideBottomNav()
+                else -> viewModel.showBottomNav()
+            }
+        }
     }
+
+    private fun setupUI() {}
+
+    private fun setupObservers() =
+        viewModel.bottomNavigationVisibility.observe(this) { navVisibility ->
+            binding?.mainBottomNavigation?.visibility = navVisibility
+        }
 }

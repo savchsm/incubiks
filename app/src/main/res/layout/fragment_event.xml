@@ -22,9 +22,9 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_event"
+        style="?attr/materialCardViewFilledStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="?attr/materialCardViewFilledStyle"
         android:layout_margin="8dp"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
@@ -69,25 +69,61 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:orientation="horizontal">
 
                 <com.google.android.material.button.MaterialButton
-                    style="?attr/borderlessButtonStyle"
+                    android:id="@+id/btn_accept_event"
+                    style="?attr/materialIconButtonFilledStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
-                    android:text="Пойду" />
+                    android:backgroundTint="@color/colorPrimary"
+                    android:text="Пойду"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <com.google.android.material.button.MaterialButton
-                    style="?attr/borderlessButtonStyle"
+                    android:id="@+id/btn_decline_event"
+                    style="?attr/materialIconButtonOutlinedStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Не пойду" />
-            </LinearLayout>
+                    android:text="Не пойду"
+                    android:textColor="@color/colorPrimary"
+                    app:layout_constraintStart_toEndOf="@id/btn_accept_event"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    style="?attr/borderlessButtonStyle"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="30dp"
+                    android:src="@drawable/ic_add_reaction"
+                    app:layout_constraintEnd_toStartOf="@id/iv_participant_1"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_participant_1"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_margin="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@drawable/def_avatar" />
+
+                <ImageView
+                    android:id="@+id/iv_participant_2"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_margin="15dp"
+                    app:layout_constraintEnd_toEndOf="@id/iv_participant_1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@drawable/def_avatar" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
 
