@@ -38,7 +38,7 @@ class HomeFragment : Fragment() {
                     R.id.eventFragment,
                     bundleOf(
                         Pair(item_event_key, itemId),
-                        Pair(item_event_type, EventType.SCHEDULED)
+                        Pair(item_event_type, EventType.SCHEDULED.ordinal)
                     ),
                     navOptions {
                         anim {
@@ -55,7 +55,7 @@ class HomeFragment : Fragment() {
                     R.id.eventFragment,
                     bundleOf(
                         Pair(item_event_key, itemId),
-                        Pair(item_event_type, EventType.RECOMMENDED)
+                        Pair(item_event_type, EventType.RECOMMENDED.ordinal)
                     ),
                     navOptions {
                         anim {
