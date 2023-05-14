@@ -29,7 +29,7 @@ class ScheduleEventsAdapter(
         BindingViewHolder<ItemScheduleEventBinding>(binding) {
 
         init {
-            binding.root.setOnClickListener { listener.onEventClicked() }
+            binding.root.setOnClickListener { listener.onEventClicked(eventsList[layoutPosition].id) }
         }
 
         fun bind(event: ScheduleEventModel) = binding.apply {
@@ -55,6 +55,6 @@ class ScheduleEventsAdapter(
     }
 
     interface Listener {
-        fun onEventClicked()
+        fun onEventClicked(itemId: Int)
     }
 }

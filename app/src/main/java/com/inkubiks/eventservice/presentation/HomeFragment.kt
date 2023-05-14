@@ -4,15 +4,19 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navOptions
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.inkubiks.eventservice.EventType
 import com.inkubiks.eventservice.R
 import com.inkubiks.eventservice.adapters.RecommendedEventsAdapter
 import com.inkubiks.eventservice.adapters.ScheduleEventsAdapter
 import com.inkubiks.eventservice.databinding.FragmentHomeBinding
 import com.inkubiks.eventservice.getDefaultEventsData
+import com.inkubiks.eventservice.item_event_key
+import com.inkubiks.eventservice.item_event_type
 import com.inkubiks.eventservice.models.recommendedEventsAndNews
 import com.inkubiks.eventservice.models.scheduledEvents
 import com.inkubiks.eventservice.viewmodel.HomeViewModel
@@ -30,9 +34,12 @@ class HomeFragment : Fragment() {
         super.onCreate(savedInstanceState)
         scheduleEventsAdapter = ScheduleEventsAdapter(
             listener = object : ScheduleEventsAdapter.Listener {
-                override fun onEventClicked() = findNavController().navigate(
+                override fun onEventClicked(itemId: Int) = findNavController().navigate(
                     R.id.eventFragment,
-                    null,
+                    bundleOf(
+                        Pair(item_event_key, itemId),
+                        Pair(item_event_type, EventType.SCHEDULED)
+                    ),
                     navOptions {
                         anim {
                             enter = android.R.animator.fade_in
@@ -44,9 +51,12 @@ class HomeFragment : Fragment() {
         )
         recommendedEventsAdapter = RecommendedEventsAdapter(
             listener = object : RecommendedEventsAdapter.Listener {
-                override fun onEventClicked() = findNavController().navigate(
+                override fun onEventClicked(itemId: Int) = findNavController().navigate(
                     R.id.eventFragment,
-                    null,
+                    bundleOf(
+                        Pair(item_event_key, itemId),
+                        Pair(item_event_type, EventType.RECOMMENDED)
+                    ),
                     navOptions {
                         anim {
                             enter = android.R.animator.fade_in
