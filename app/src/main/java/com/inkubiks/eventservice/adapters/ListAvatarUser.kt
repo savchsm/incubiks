@@ -10,7 +10,9 @@ import com.inkubiks.eventservice.models.profile.Profile
 import com.inkubiks.eventservice.models.profile.Status
 import com.inkubiks.eventservice.toBinding
 
-class ListAvatarUser : RecyclerView.Adapter<ListAvatarUser.AvatarUserViewHolder>() {
+class ListAvatarUser(
+    private val listener: Listener
+) : RecyclerView.Adapter<ListAvatarUser.AvatarUserViewHolder>() {
 
     private val avatarUsers: MutableList<Profile> = mutableListOf()
 
@@ -44,6 +46,13 @@ class ListAvatarUser : RecyclerView.Adapter<ListAvatarUser.AvatarUserViewHolder>
                 if (profile.status == Status.ONLINE.value) {
                     ivOnline.visibility = View.VISIBLE
                 }
+                root.setOnClickListener {
+                    listener.clickUser(profile)
+                }
             }
+    }
+
+    interface Listener {
+        fun clickUser(profile: Profile)
     }
 }
