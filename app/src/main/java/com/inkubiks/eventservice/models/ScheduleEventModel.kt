@@ -5,7 +5,6 @@ import java.util.UUID
 
 data class ScheduleEventModel(
     val id: Int,
-    val profileId: List<Int> = listOf(),
     val title: String,
     val description: String,
     val image: Int? = null,
@@ -60,7 +59,6 @@ val scheduledEvents: List<ScheduleEventModel> = listOf(
 val recommendedEventsAndNews = listOf(
     ScheduleEventModel(
         id = 6,
-        profileId = listOf(),
         title = "День рождения генерального директора",
         description = "День рождения — годовщина рождения, соответствует дате рождения человека. Обычно день рождения празднуется как домашний праздник, с семьёй и друзьями. Практикуется также и отмечание этой даты с коллегами.",
         image = R.drawable.def_picture_9,
@@ -70,7 +68,6 @@ val recommendedEventsAndNews = listOf(
     ),
     ScheduleEventModel(
         id = 7,
-        profileId = listOf(),
         title = "Podlodka Java Crew",
         description = "Ребята из Podlodka Crew проводят Java Crew всего лишь второй раз, но пилотный выпуск уже успел всем запомниться, особенно интересными гостями. Тогда организаторам удалось пригласить легенду JVM-мира Отавио Сантану, который рассказал, чем можно заменить Spring Data JPA и как эффективно выстраивать слой взаимодействия с БД. А тема этого сезона — микросервисная архитектура.",
         image = R.drawable.def_picture,
@@ -78,8 +75,7 @@ val recommendedEventsAndNews = listOf(
         time = "20–24 марта, онлайн"
     ),
     ScheduleEventModel(
-        id = 11,
-        profileId = listOf(),
+        id = 8,
         title = "TED Conference 2023",
         description = "Американский некоммерческий фонд, который ежегодно проводит конференции для распространения уникальных и важных идей по всему миру. ",
         image = R.drawable.def_picture_17,
@@ -88,7 +84,6 @@ val recommendedEventsAndNews = listOf(
     ),
     ScheduleEventModel(
         id = 9,
-        profileId = listOf(),
         title = "JPoint 2023",
         description = "JPoint — одно из первых русскоязычных мероприятий для Java-программистов, JUG Ru Group проводит его с 2013 года. Предупреждаем: конфа — для опытных разработчиков, а не для джунов. Там вам расскажут о неочевидных фишках Spring Boot, разложат по винтикам JVM и покажут, как приручить потоки.\n" +
                 "\n" +
@@ -100,7 +95,6 @@ val recommendedEventsAndNews = listOf(
     ),
     ScheduleEventModel(
         id = 10,
-        profileId = listOf(),
         title = "TeamLead Conf 2023",
         description = "Самая крупная мультиформатная конференция для тимлидов и руководителей, которая соберёт более 1300 зрителей и более 50 спикеров. Среди основных тем — борьба с кадровой текучкой, накопление и передача экспертности, поиск лидеров и разработка карьерных треков сотрудников.",
         image = R.drawable.def_picture_7,
@@ -109,7 +103,6 @@ val recommendedEventsAndNews = listOf(
     ),
     ScheduleEventModel(
         id = 11,
-        profileId = listOf(),
         title = "DevOps Conf 2023",
         description = "DevOps Conf — это крупнейшая площадка для обсуждения практических вопросов DevOps, SRE и других инженерных практик. Здесь собираются инженеры, техлиды, тимлиды, СТО и СІО, которые делятся своими кейсами и решениями, а не пересказывают документацию. Участники обсудят новые тренды, serverless, service mesh, импортозамещение в DevOps, проверки библиотек и релизов на уязвимости, вредоносные закладки, новые подходы к безопасности и много другое.",
         image = R.drawable.def_picture_6,
@@ -118,8 +111,7 @@ val recommendedEventsAndNews = listOf(
         place = "Томск, ТПУ"
     ),
     ScheduleEventModel(
-        id = 8,
-        profileId = listOf(),
+        id = 12,
         title = "Mobius 2023 Spring",
         description = "Конференция для всех, кто так или иначе связан с мобильной разработкой: iOS- и Android-разработчиков, архитекторов мобильных приложений, DevOps-инженеров, тестировщиков, тимлидов и руководителей проектов.",
         image = R.drawable.def_picture_5,

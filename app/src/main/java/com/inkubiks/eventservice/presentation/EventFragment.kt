@@ -1,19 +1,18 @@
 package com.inkubiks.eventservice.presentation
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
-import com.google.android.material.badge.BadgeUtils
 import com.google.android.material.snackbar.Snackbar
 import com.inkubiks.eventservice.EventType
 import com.inkubiks.eventservice.R
 import com.inkubiks.eventservice.databinding.FragmentEventBinding
-import com.inkubiks.eventservice.databinding.FragmentHomeBinding
 import com.inkubiks.eventservice.item_event_key
 import com.inkubiks.eventservice.item_event_type
 import com.inkubiks.eventservice.models.ScheduleEventModel
