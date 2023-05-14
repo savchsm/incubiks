@@ -45,4 +45,8 @@
         android:name="com.inkubiks.eventservice.presentation.CreateEventFragment"
         android:label="fragment_create_event"
         tools:layout="@layout/fragment_create_event" />
+    <fragment
+        android:id="@+id/guestProfileFragment"
+        android:name="com.inkubiks.eventservice.presentation.GuestProfileFragment"
+        android:label="GuestProfileFragment" />
 </navigation>
