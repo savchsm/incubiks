@@ -13,4 +13,6 @@
     <string name="meetup_android_team">MeetUp Android Team</string>
     <string name="def_secondary_text">Примите участи в хакатонемтуломлуомтуолмтоуктмоумтолумотмуомтмут</string>
     <string name="news">Новости и события</string>
+    <string name="favourite">Favourite</string>
+    <string name="add_event">Coздать мероприятие</string>
 </resources>

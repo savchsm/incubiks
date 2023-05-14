@@ -14,6 +14,7 @@
             android:id="@+id/top_app_bar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            app:menu="@menu/top_app_bar_event_details"
             app:navigationIcon="@drawable/ic_arrow_back"
             app:title="@string/meetup_android_team"
             app:titleTextAppearance="@style/TextAppearance.Material3.TitleLarge" />
