@@ -1,9 +1,11 @@
 package com.inkubiks.eventservice.adapters
 
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.inkubiks.eventservice.BindingViewHolder
+import com.inkubiks.eventservice.R
 import com.inkubiks.eventservice.databinding.ItemRecommendedEventBinding
 import com.inkubiks.eventservice.databinding.ItemScheduleEventBinding
 import com.inkubiks.eventservice.models.ScheduleEventModel
@@ -35,6 +37,9 @@ class RecommendedEventsAdapter(
             tvEventTitle.text = event.title
             tvEventDescription.text = event.description
             Glide.with(context).load(event.image).into(ivEventImage)
+            if (event.isImportant) {
+                card.setBackgroundColor(ContextCompat.getColor(context, R.color.colorPrimary))
+            }
         }
     }
 

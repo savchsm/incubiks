@@ -7,4 +7,7 @@
     <color name="blue">#96D9E3</color>
     <color name="siniy">#4654CF</color>
     <color name="colorPrimary">#EB2A59</color>
+    <color name="colorPrimary30">#4DEB2A59</color>
+    <color name="colorPrimary20">#33EB2A59</color>
+    <color name="transparent">#00000000</color>
 </resources>
