@@ -10,6 +10,7 @@
         android:enabled="true"
         android:icon="@drawable/ic_work"
         android:title="@string/staff_page" />
+
     <item
         android:id="@id/chatFragment"
         android:enabled="true"
