@@ -1,6 +1,7 @@
 package com.inkubiks.eventservice.adapters
 
 import android.view.ViewGroup
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -30,15 +31,25 @@ class RecommendedEventsAdapter(
         BindingViewHolder<ItemRecommendedEventBinding>(binding) {
 
         init {
-            binding.root.setOnClickListener { listener.onEventClicked() }
+            binding.root.setOnClickListener { listener.onEventClicked(eventsList[layoutPosition].id) }
         }
 
         fun bind(event: ScheduleEventModel) = binding.apply {
             tvEventTitle.text = event.title
             tvEventDescription.text = event.description
+            tvEventTime.text = event.time
             Glide.with(context).load(event.image).into(ivEventImage)
+            Glide.with(context)
+                .load(R.drawable.woman3)
+                .circleCrop()
+                .into(ivParticipant1)
+            Glide.with(context)
+                .load(R.drawable.man1)
+                .circleCrop()
+                .into(ivParticipant2)
             if (event.isImportant) {
-                card.setBackgroundColor(ContextCompat.getColor(context, R.color.colorPrimary))
+                card.strokeWidth = 10
+                card.strokeColor = ContextCompat.getColor(context, R.color.colorPrimary)
             }
         }
     }
@@ -50,6 +61,6 @@ class RecommendedEventsAdapter(
     }
 
     interface Listener {
-        fun onEventClicked()
+        fun onEventClicked(itemId: Int)
     }
 }

@@ -3,11 +3,19 @@ package com.inkubiks.eventservice
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 import com.inkubiks.eventservice.models.ScheduleEventModel
 import java.util.Random
 import java.util.UUID
+
+const val item_event_key = "ITEM_ID"
+const val item_event_type = "ITEM_EVENT_TYPE"
+
+enum class EventType {
+    RECOMMENDED, SCHEDULED
+}
 
 fun getRandomDrawableId(): Int = listOf(
     R.drawable.def_picture_1,
@@ -25,7 +33,7 @@ fun getDefaultEventsData(): List<ScheduleEventModel> {
     repeat(10) {
         list.add(
             ScheduleEventModel(
-                id = UUID.randomUUID().toString(),
+                id = Random().nextInt(),
                 title = getRandomEventTitle(),
                 description = getRandomEventTitle(),
                 image = getRandomDrawableId(),
