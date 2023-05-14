@@ -75,6 +75,7 @@ class GuestProfileFragment : Fragment() {
                 tvDepartment.text = profile.department
                 tvPosition.text = profile.position
                 tvExperience.text = profile.experience
+                headProfile.ivBack.setOnClickListener { findNavController().navigateUp() }
             }
         }
     }
