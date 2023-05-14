@@ -1,5 +1,9 @@
 package com.inkubiks.eventservice.models.profile
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Profile(
     val id: String,
     val name: String,
@@ -15,4 +19,4 @@ data class Profile(
     val friends: List<Profile>,
     val isGuest: Boolean = false,
     val interests: List<Interest>
-)
+) : Parcelable

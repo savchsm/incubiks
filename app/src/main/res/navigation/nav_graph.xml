@@ -28,4 +28,8 @@
         android:name="com.inkubiks.eventservice.presentation.StaffFragment"
         android:label="fragment_staff"
         tools:layout="@layout/fragment_staff" />
+    <fragment
+        android:id="@+id/guestProfileFragment"
+        android:name="com.inkubiks.eventservice.presentation.GuestProfileFragment"
+        android:label="GuestProfileFragment" />
 </navigation>
