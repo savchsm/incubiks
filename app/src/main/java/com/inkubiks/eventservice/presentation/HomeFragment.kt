@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.navOptions
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.inkubiks.eventservice.R
 import com.inkubiks.eventservice.adapters.RecommendedEventsAdapter
@@ -27,12 +28,30 @@ class HomeFragment : Fragment() {
         super.onCreate(savedInstanceState)
         scheduleEventsAdapter = ScheduleEventsAdapter(
             listener = object : ScheduleEventsAdapter.Listener {
-                override fun onEventClicked() = findNavController().navigate(R.id.eventFragment)
+                override fun onEventClicked() = findNavController().navigate(
+                    R.id.eventFragment,
+                    null,
+                    navOptions {
+                        anim {
+                            enter = android.R.animator.fade_in
+                            exit = android.R.animator.fade_out
+                        }
+                    }
+                )
             }
         )
         recommendedEventsAdapter = RecommendedEventsAdapter(
             listener = object : RecommendedEventsAdapter.Listener {
-                override fun onEventClicked() = findNavController().navigate(R.id.eventFragment)
+                override fun onEventClicked() = findNavController().navigate(
+                    R.id.eventFragment,
+                    null,
+                    navOptions {
+                        anim {
+                            enter = android.R.animator.fade_in
+                            exit = android.R.animator.fade_out
+                        }
+                    }
+                )
             }
         )
     }
@@ -69,6 +88,8 @@ class HomeFragment : Fragment() {
             layoutManager = llManagerRecommendedEvents
             adapter = recommendedEventsAdapter
         }
+
+        fabCreateEvent.setOnClickListener { findNavController().navigate(R.id.createEventFragment) }
     }
 
     private fun setupObservers() {}
