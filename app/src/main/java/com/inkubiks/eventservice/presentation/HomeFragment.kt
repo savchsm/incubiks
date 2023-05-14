@@ -88,6 +88,8 @@ class HomeFragment : Fragment() {
             layoutManager = llManagerRecommendedEvents
             adapter = recommendedEventsAdapter
         }
+
+        fabCreateEvent.setOnClickListener { findNavController().navigate(R.id.createEventFragment) }
     }
 
     private fun setupObservers() {}
