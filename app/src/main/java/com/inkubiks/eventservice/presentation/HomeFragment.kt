@@ -13,6 +13,8 @@ import com.inkubiks.eventservice.adapters.RecommendedEventsAdapter
 import com.inkubiks.eventservice.adapters.ScheduleEventsAdapter
 import com.inkubiks.eventservice.databinding.FragmentHomeBinding
 import com.inkubiks.eventservice.getDefaultEventsData
+import com.inkubiks.eventservice.models.recommendedEventsAndNews
+import com.inkubiks.eventservice.models.scheduledEvents
 import com.inkubiks.eventservice.viewmodel.HomeViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -70,8 +72,8 @@ class HomeFragment : Fragment() {
         setupUI()
         setupObservers()
 
-        scheduleEventsAdapter?.updateData(getDefaultEventsData())
-        recommendedEventsAdapter?.updateData(getDefaultEventsData())
+        scheduleEventsAdapter?.updateData(scheduledEvents)
+        recommendedEventsAdapter?.updateData(recommendedEventsAndNews)
     }
 
     private fun setupUI() = binding?.apply {

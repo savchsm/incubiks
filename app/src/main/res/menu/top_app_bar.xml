@@ -4,7 +4,7 @@
     <item
         android:id="@+id/notifications"
         android:contentDescription="@string/goto_notifications_screen"
-        android:icon="@drawable/ic_notific"
+        android:icon="@drawable/ic_notif_filled"
         android:title="@string/notifications"
         app:showAsAction="ifRoom" />
 </menu>

@@ -39,9 +39,11 @@ class ScheduleEventsAdapter(
                 eventCard.apply {
                     strokeWidth = 5
                     strokeColor = ContextCompat.getColor(context, R.color.colorPrimary)
+                    ivEventImage.setColorFilter(
+                        ContextCompat.getColor(context, R.color.colorPrimary30)
+                    )
                 }
             }
-
             Glide.with(context).load(event.image).into(ivEventImage)
         }
     }
