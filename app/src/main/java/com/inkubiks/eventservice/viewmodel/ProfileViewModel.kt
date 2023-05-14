@@ -49,6 +49,55 @@ private val userProfile = Profile(
             friends = listOf(),
             isGuest = true,
             interests = listOf()
+        ),
+        Profile(
+            id = "15",
+            name = "Степанова Мария",
+            avatar = R.drawable.woman2,
+            status = Status.ON_HOLIDAY.value,
+            city = "Москва",
+            points = 400,
+            isTeamLead = false,
+            department = "Отдел разработки",
+            position = "Android developer",
+            experience = "3 года",
+            team = listOf(
+                Profile(
+                    id = "2",
+                    name = "Скирневский Игнат",
+                    avatar = R.drawable.man5,
+                    status = Status.ONLINE.value,
+                    city = "Москва",
+                    points = 400,
+                    isTeamLead = true,
+                    department = "Отдел разработки",
+                    position = "Android Developer",
+                    experience = "1 год",
+                    team = listOf(),
+                    friends = listOf(),
+                    isGuest = true,
+                    interests = listOf()
+                ),
+                Profile(
+                    id = "7",
+                    name = "Кривченко Олег",
+                    avatar = R.drawable.man2,
+                    status = Status.ONLINE.value,
+                    city = "Омск",
+                    points = 400,
+                    isTeamLead = false,
+                    department = "Отдел разработки",
+                    position = "Android Developer",
+                    experience = "3 года 2 месяца",
+                    team = listOf(),
+                    friends = listOf(),
+                    isGuest = true,
+                    interests = listOf()
+                ),
+            ),
+            friends = listOf(),
+            isGuest = true,
+            interests = listOf()
         )
     ),
     friends = listOf(
@@ -64,7 +113,24 @@ private val userProfile = Profile(
             position = "Backend developer",
             experience = "2 года 5 месяцев",
             team = listOf(),
-            friends = listOf(),
+            friends = listOf(
+                Profile(
+                    id = "7",
+                    name = "Кривченко Олег",
+                    avatar = R.drawable.man2,
+                    status = Status.ONLINE.value,
+                    city = "Омск",
+                    points = 400,
+                    isTeamLead = false,
+                    department = "Отдел разработки",
+                    position = "Android Developer",
+                    experience = "3 года 2 месяца",
+                    team = listOf(),
+                    friends = listOf(),
+                    isGuest = true,
+                    interests = listOf()
+                )
+            ),
             isGuest = true,
             interests = listOf()
         ),
